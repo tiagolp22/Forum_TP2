@@ -1,0 +1,136 @@
+@import url(reset.css);
+:root {
+    --background-color: #e5f5ff;
+    --text-color: grey;
+    --link-color: #003e71;
+    --link-hover-color: #1b1b1b;
+    --link-bg-color: white;
+    --nav-bg-color: rgb(62, 94, 255);
+    --header-bg-color: #ffffff;
+    --form-bg-color: #ffffff;
+    --form-shadow-color: rgba(0, 0, 0, 0.1);
+    --form-input-border: #ccc;
+    --form-button-bg: #0069bf;
+    --form-button-text: white;
+    --form-button-hover: #001f3f;
+    --login-page-width: 400px;
+    --login-page-padding: 8%;
+    --nav-font-size: 18px;
+    --nav-margin-left: 15px;
+    --nav-padding: 16px;
+    --nav-max-width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+header {
+    background-color: var(--header-bg-color);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--nav-padding);
+    background-color: var(--nav-bg-color);
+    max-width: var(--nav-max-width);
+}
+
+nav a {
+    color: var(--link-color);
+    font-size: var(--nav-font-size);
+    text-decoration: none;
+    margin-left: var(--nav-margin-left);
+}
+
+nav a.active {
+    color: var(--text-color);
+}
+
+nav a:hover:not(.active) {
+    color: var(--link-hover-color);
+    background-color: var(--link-bg-color);
+    transition-duration: .6s;
+}
+
+nav > div {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+}
+
+.login-page {
+    width: var(--login-page-width);
+    padding: var(--login-page-padding) 0 0;
+    margin: auto;
+}
+
+.login-page > h3 {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.form {
+    background-color: var(--form-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--form-shadow-color);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form input,
+.login-form button {
+    padding: 10px;
+    border: 1px solid var(--form-input-border);
+    border-radius: 4px;
+}
+
+.login-form button {
+    background-color: var(--form-button-bg);
+    color: var(--form-button-text);
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: var(--form-button-hover);
+}
+
+table {
+    border-collapse: collapse; /* Merge borders for a cleaner look */
+    width: 100%; /* Make the table fill its container */
+}
+
+/* Style table headers (th) */
+th {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Style table data (td) */
+td {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+/* Add alternating row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Apply some basic styling to the form */
+form {
+    width: 300px;
+    margin: 0 auto;
+}

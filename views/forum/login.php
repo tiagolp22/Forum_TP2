@@ -11,8 +11,6 @@ if(isset($_GET['msg'])){
 
 ?>
 
-
-
 <h3>Se connecter</h3>
 <br>
 <form action="?controller=forum&function=connect" method="post">

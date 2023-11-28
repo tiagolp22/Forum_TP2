@@ -52,44 +52,44 @@ function forum_model_login() {
     session_start();
     require(CONNEX_DIR);
 
-foreach($_POST as $key=>$value){
-    $$key = mysqli_real_escape_string($con, $value);
-}
-
-// 1- check user
-$sql = "SELECT * FROM utilisateur WHERE email = '$email'";
-
-$result = mysqli_query($con, $sql);
-
-//2 - verifier nombre de lignes
-$count = mysqli_num_rows($result);
-if($count == 1){
-//3 verifier le mot de passe
-$info_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-$salt = "H@%h14";
-$saltPassword = $mot_de_passe.$salt;
-
-    if(password_verify($saltPassword, $info_user['mot_de_passe'])){
-        
-        error_log(" chegou aqui");
-
-        //print_r($info_user);
-        session_regenerate_id();
-        $_SESSION['id'] = $info_user['id'];
-        $_SESSION['nom'] = $info_user['nom'];
-        $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR']);
-       
-        header('location:/view/forum/index.php');
-
-    }else{
-        header('location:forum/login.php?msg=2');
+    foreach($_POST as $key=>$value){
+        $$key = mysqli_real_escape_string($con, $value);
     }
 
-}else{
-    header('location:forum/login.php?msg=1');
-}
+    // 1- check user
+    $sql = "SELECT * FROM utilisateur WHERE email = '$email'";
+
+    $result = mysqli_query($con, $sql);
+
+    //2 - verifier nombre de lignes
+    $count = mysqli_num_rows($result);
+    if($count == 1){
+    //3 verifier le mot de passe
+    $info_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $salt = "H@%h14";
+    $saltPassword = $mot_de_passe.$salt;
+
+        if(password_verify($saltPassword, $info_user['mot_de_passe'])){
+            
+            error_log(" chegou aqui");
+
+            //print_r($info_user);
+            session_regenerate_id();
+            $_SESSION['id'] = $info_user['id_utilisateur'];
+            $_SESSION['nom'] = $info_user['nom'];
+            $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR']);
+        
+            header('location:?controller=forum&function=renderforum');
+
+        }else{
+            header('location:forum/login.php?msg=2');
+        }
+
+    }else{
+        header('location:forum/login.php?msg=1');
+    }
 
 
 
-}
+    }
 ?>

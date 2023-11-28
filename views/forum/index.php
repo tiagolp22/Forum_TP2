@@ -1,6 +1,3 @@
-cheguei aqui e deu certo
-
-
 
 <table>
   <thead>
@@ -25,7 +22,7 @@ cheguei aqui e deu certo
       </td>
       <td>
         <form action="?module=forum&action=delete" method="post">
-          <input type="hidden" name="userId" value="<?php echo $row['id_utilisateur'] ?>">
+          <input type="hidden" name="id_utilisateur" value="<?php echo $row['id_utilisateur'] ?>">
       
         <input type="submit" Value="Effacer">
         </form>

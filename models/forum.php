@@ -8,9 +8,10 @@ function forum_model_list(){
     return $result;
 }
 
-function forum_model_insert($request){
+function forum_model_insert(){
     require(CONNEX_DIR);
-    foreach ($request as $key => $value) {
+    require_once('lib/checkSession.php');
+    foreach ($_POST as $key => $value) {
         $$key = mysqli_real_escape_string($con, $value);
     }
     $sql = "INSERT INTO forum (titre, texte, date, id_utilisateur_forum) VALUES ('$titre', '$texte', '$date', '$id_utilisateur_forum')";
@@ -70,10 +71,7 @@ function forum_model_login() {
     $saltPassword = $mot_de_passe.$salt;
 
         if(password_verify($saltPassword, $info_user['mot_de_passe'])){
-            
-            error_log(" chegou aqui");
-
-            //print_r($info_user);
+    
             session_regenerate_id();
             $_SESSION['id'] = $info_user['id_utilisateur'];
             $_SESSION['nom'] = $info_user['nom'];

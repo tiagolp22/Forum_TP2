@@ -7,6 +7,11 @@ function forum_controller_login($request){
      render(VIEW_DIR.'/forum/login.php');
 }
 
+function forum_controller_create(){
+
+     render(VIEW_DIR.'/forum/create.php');
+}
+
 function forum_controller_connect(){
      require_once(MODEL_DIR.'/forum.php');
      forum_model_login();
@@ -19,15 +24,12 @@ function forum_controller_index(){
      render(VIEW_DIR.'/forum/index.php', $data);
 }
 
-function forum_controller_create(){
 
-     render(VIEW_DIR.'/forum/create.php');
-}
 
-function forum_controller_insert($request){
+function forum_controller_insert(){
 
      require_once(MODEL_DIR.'/forum.php');
-     forum_model_insert($request);
+     forum_model_insert();
      header("?controller=forum&function=index");
 }
 

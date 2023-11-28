@@ -1,3 +1,24 @@
+<?php
+
+require_once('lib/checkSession.php');
+if($_SESSION){
+  ?>
+  <h1>Bonjour, <?= $_SESSION['nom'] ?></h1>
+<?php
+
+error_log(" nome do cab^oco logado " .$_SESSION['nom']);
+} else{
+
+  ?>
+  <h1>Bonjour</h1>
+<?php
+
+
+}
+
+?>
+
+
 
 <table>
   <thead>
@@ -22,7 +43,7 @@
       </td>
       <td>
         <form action="?module=forum&action=delete" method="post">
-          <input type="hidden" name="id_utilisateur" value="<?php echo $row['id_utilisateur'] ?>">
+          <input type="hidden" name="id_utilisateur" value="<?= $row['id_utilisateur'] ?>">
       
         <input type="submit" Value="Effacer">
         </form>

@@ -30,7 +30,7 @@ function forum_controller_insert(){
 
      require_once(MODEL_DIR.'/forum.php');
      forum_model_insert();
-     header("?controller=forum&function=index");
+     header("Location: ?controller=forum&function=index");
 }
 
 function forum_controller_view($request){

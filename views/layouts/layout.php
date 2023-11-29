@@ -15,6 +15,7 @@
           <a href="?controller=forum&function=create">Ajouter un article</a>
           <a href="?controller=utilisateur&function=index">Lister les utilisateurs</a>
           <a href="?controller=utilisateur&function=create">Saisir un utilisateur</a>
+          <a href="?controller=utilisateur&function=logout">Logout</a>
      </nav>
 </header>
 

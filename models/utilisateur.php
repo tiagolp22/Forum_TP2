@@ -58,7 +58,7 @@ function utilisateur_model_edit($request){
 
 function utilisateur_model_delete($request){
     require(CONNEX_DIR);
-    $id_utilisateur = mysqli_real_escape_string($con, $_POST['id_utilisateur']);
+    $id_utilisateur = mysqli_real_escape_string($con, $request['id_utilisateur']);
     $sql = "DELETE FROM utilisateur WHERE id_utilisateur = '$id_utilisateur'";
     $result = mysqli_query($con, $sql);
     mysqli_close($con);

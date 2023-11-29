@@ -41,4 +41,15 @@ function utilisateur_controller_delete($request){
      header("Location: ?controller=utilisateur&function=index");
 }
 
+function utilisateur_controller_logout()
+{
+    require('lib/checkSession.php');
+
+    session_start();
+    $_SESSION = array();
+    session_destroy();
+   
+    header("Location: ?controller=forum&function=login");
+    exit();
+}
 ?>

@@ -36,14 +36,16 @@ function forum_model_edit($request){
     foreach ($request as $key => $value) {
         $$key = mysqli_real_escape_string($con, $value);
     }
-    $sql="UPDATE forum SET titre='$titre', texte='$texte', date= '$date' WHERE id_forum = '$id_forum'";
+    $sql = "UPDATE forum SET titre='$titre', texte='$texte', date= '$date' WHERE id_forum = '$id_forum'";
     $result = mysqli_query($con, $sql);
     mysqli_close($con);
 }
 
+
+
 function forum_model_delete($request){
     require(CONNEX_DIR);
-    $id_forum = mysqli_real_escape_string($con, $_POST['id_forum']);
+    $id_forum = mysqli_real_escape_string($con, $request['id_forum']);
     $sql = "DELETE FROM forum WHERE id_forum = '$id_forum'";
     $result = mysqli_query($con, $sql);
     mysqli_close($con);
@@ -57,15 +59,13 @@ function forum_model_login() {
         $$key = mysqli_real_escape_string($con, $value);
     }
 
-    // 1- check user
     $sql = "SELECT * FROM utilisateur WHERE email = '$email'";
 
     $result = mysqli_query($con, $sql);
 
-    //2 - verifier nombre de lignes
     $count = mysqli_num_rows($result);
     if($count == 1){
-    //3 verifier le mot de passe
+
     $info_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $salt = "H@%h14";
     $saltPassword = $mot_de_passe.$salt;

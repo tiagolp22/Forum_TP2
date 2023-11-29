@@ -46,17 +46,16 @@ function forum_controller_view($request){
 function forum_controller_edit($request){
      require_once(MODEL_DIR.'/forum.php');
      forum_model_edit($request);
-     header("?controller=forum&function=index");
-}
+     header("Location: ?controller=forum&function=view&id_forum=" . $request['id_forum']);
+     exit();
+ }
 
 
 
 function forum_controller_delete($request){
-     require_once(MODEL_DIR.'/forum.php');
-     forum_model_delete($request);
-     header("?controller=forum&function=index");
+    require_once(MODEL_DIR.'/forum.php');
+    forum_model_delete($request);
+    header("Location: ?controller=forum&function=index");
 }
-
-
 
 ?>

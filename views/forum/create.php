@@ -4,7 +4,7 @@ require_once('lib/checkSession.php');
 if(!$_SESSION){
      ?>
      
-     <div><h1>Vos n'etes pas connect'e</h1></div>
+     <div><h1>Vous n'etes pas connecte</h1></div>
 
 <?php 
 } else {

@@ -77,7 +77,7 @@ function forum_model_login() {
             $_SESSION['nom'] = $info_user['nom'];
             $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR']);
         
-            header('location:?controller=forum&function=renderforum');
+            header('location:?controller=forum&function=index');
 
         }else{
             header('location:forum/login.php?msg=2');

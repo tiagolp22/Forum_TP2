@@ -2,8 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-echo 'Incluiu utilisateurControllers.php';
-
 function utilisateur_controller_index(){
      require_once(MODEL_DIR.'/utilisateur.php');
      $data = utilisateur_model_list();

@@ -1,8 +1,8 @@
 <?php
 
-function forum_controller_renderforum() {
-     render(VIEW_DIR.'/forum/index.php');
-}
+// function forum_controller_renderforum() {
+//      render(VIEW_DIR.'/forum/index.php');
+// }
 function forum_controller_login($request){
      render(VIEW_DIR.'/forum/login.php');
 }
@@ -23,7 +23,6 @@ function forum_controller_index(){
      $data = forum_model_list();
      render(VIEW_DIR.'/forum/index.php', $data);
 }
-
 
 
 function forum_controller_insert(){
@@ -49,7 +48,6 @@ function forum_controller_edit($request){
      header("Location: ?controller=forum&function=view&id_forum=" . $request['id_forum']);
      exit();
  }
-
 
 
 function forum_controller_delete($request){

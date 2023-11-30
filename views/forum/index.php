@@ -6,7 +6,7 @@ if ($_SESSION) {
 ?>
     <h1>Bonjour, <?= $_SESSION['nom'] ?></h1>
 <?php
-    error_log("Nome do cab^oco logado " . $_SESSION['nom']);
+    error_log("Nome do caboco logado " . $_SESSION['nom']);
 } else {
 ?>
     <h1>Bonjour</h1>
@@ -51,7 +51,7 @@ if ($_SESSION) {
             }
         } else {
 
-            echo "<tr><td colspan='5'>nada</td></tr>";
+            echo "<tr><td colspan='5'>Connectez-vous pour créer et modifier le forum</td></tr>";
         }
         ?>
     </tbody>

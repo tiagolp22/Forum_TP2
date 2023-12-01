@@ -27,8 +27,10 @@ $result = mysqli_query($con, $sql);
         <?php if ($_SESSION): ?>
             <div class="bnt-formt">
                 <?php if ($_SESSION['id'] == $row['id_utilisateur_forum']): ?>
-                    <a href="index.php?controller=forum&function=edit&id_forum=<?= $row['id_forum']; ?>"><button type="submit">Éditer</button></a>
-                    <a href="index.php?controller=forum&function=delete&id_forum=<?= $row['id_forum']; ?>"><button class="danger" type="submit">Effacer</button></a>
+                    <a href="index.php?controller=forum&function=edit&id_forum=<?= $row['id_forum']; ?>">
+                    <button type="submit">Éditer</button></a>
+                    <a href="index.php?controller=forum&function=delete&id_forum=<?= $row['id_forum']; ?>">
+                    <button class="danger" type="submit">Effacer</button></a>
                 <?php else: ?>
                     
                     <button type="submit" disabled>Éditer</button>

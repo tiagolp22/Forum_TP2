@@ -1,4 +1,4 @@
-<form action="?controller=utilisateur&function=insert" method="post">
+<form class="login" action="?controller=utilisateur&function=insert" method="post">
      <label for="nom">
           Nom 
           <input type="text" id="nom" name="nom" minlength="2" maxlength="25" value="" required>

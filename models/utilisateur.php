@@ -46,16 +46,6 @@ function utilisateur_model_view($request){
     return $result;
 }
 
-// function utilisateur_model_edit($request){
-//     require(CONNEX_DIR);
-//     foreach ($request as $key => $value) {
-//         $$key = mysqli_real_escape_string($con, $value);
-//     }
-//     $sql="UPDATE utilisateur SET nom='$nom', date_de_naissance='$date_de_naissance', email='$email' WHERE id_utilisateur = '$id_utilisateur'";
-//     $result = mysqli_query($con, $sql);
-//     mysqli_close($con);
-// }
-
 function utilisateur_model_delete($request){
     require(CONNEX_DIR);
     $id_utilisateur = mysqli_real_escape_string($con, $request['id_utilisateur']);

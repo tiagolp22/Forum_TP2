@@ -12,21 +12,21 @@ if (isset($_GET['msg'])) {
 
 ?>
 
-<div class="login-page">
-    <div class="form">
-        <form action="?controller=forum&function=connect" class="login-form" method="post">
+    <div class="login">
+        <div>
+            <form action="?controller=forum&function=connect" class="login" method="post">
 
-            <label for="email">
-                Nom d'utilisateur
-                <input type="text" name="email" placeholder="Nom d'utilisateur" />
-            </label>
-            <label>
-                Mot de passe
-                <input type="password" name="mot_de_passe" placeholder="Mot de passe"/>
-            </label>
-            <br>
-            <input type="submit" class="bouton">Se connecter</input>
-            <p class="message">Nouvelle utilisateur ? <a href="?controller=utilisateur&function=create">Se créer un compte</a></p>
+                <label for="email">
+                    Nom d'utilisateur
+                    <input type="text" name="email" placeholder="Nom d'utilisateur" />
+                </label>
+                <label>
+                    Mot de passe
+                    <input type="password" name="mot_de_passe" placeholder="Mot de passe"/>
+                </label>
+                <br>
+                <input type="submit" class="bouton">Se connecter</input>
+                <p class="message">Nouvelle utilisateur ? <a href="?controller=utilisateur&function=create">Se créer un compte</a></p>
+            </form>
+        </div>
     </div>
-</div>
-</form>

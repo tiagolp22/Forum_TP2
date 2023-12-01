@@ -23,7 +23,7 @@ function forum_model_insert(){
 
 function forum_model_update() {
     require(CONNEX_DIR);
-    
+
     foreach ($_POST as $key => $value) {
         $$key = mysqli_real_escape_string($con, $value);
         error_log("Key : ". $key . " Value : ". $value);
@@ -50,12 +50,8 @@ function forum_model_edit($request) {
     if ($count == 1) {
         $forum_data = mysqli_fetch_assoc($result);
         return $forum_data;
-    } else {
-      
     }
 }
-
-
 
 function forum_model_delete($request){
     require(CONNEX_DIR);

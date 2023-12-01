@@ -11,9 +11,7 @@ if(isset($_GET['msg'])){
 
 ?>
 
-<h3>Se connecter</h3>
-<br>
-<form action="?controller=forum&function=connect" class="login-form" method="post">
+<form class="login" action="?controller=forum&function=connect" class="login-form" method="post">
     
     <label for="email">
         Nom d'utilisateur

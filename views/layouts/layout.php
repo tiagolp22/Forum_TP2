@@ -2,8 +2,6 @@
 require_once('lib/checkSession.php');
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +19,7 @@ require_once('lib/checkSession.php');
           <?php
                 if ($_SESSION) {
                 ?>
-                    <li><a href="?controller=forum&function=create">Ajouter un article</a></li>
+                    <a href="?controller=forum&function=create">Ajouter un article</a>
                 <?php
                 }?>
           <a href="?controller=utilisateur&function=create">Saisir un utilisateur</a>

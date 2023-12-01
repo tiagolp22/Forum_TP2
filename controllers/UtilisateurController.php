@@ -27,11 +27,11 @@ function utilisateur_controller_view($request){
      render(VIEW_DIR.'/utilisateur/view.php', $data);
 }
 
-function utilisateur_controller_edit($request){
-     require_once(MODEL_DIR.'/utilisateur.php');
-     utilisateur_model_edit($request);
-     header("Location: ?controller=utilisateur&function=index");
-}
+// function utilisateur_controller_edit($request){
+//      require_once(MODEL_DIR.'/utilisateur.php');
+//      utilisateur_model_edit($request);
+//      header("Location: ?controller=utilisateur&function=index");
+// }
 
 function utilisateur_controller_delete($request){
      require_once(MODEL_DIR.'/utilisateur.php');

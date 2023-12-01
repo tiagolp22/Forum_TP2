@@ -38,9 +38,7 @@ function forum_model_edit($request) {
         $$key = mysqli_real_escape_string($con, $value);
     }
 
-    // Adicione verificações para garantir que os campos estejam definidos
     if (!isset($titre, $texte, $date, $id_forum)) {
-        // Lide com a situação em que algum campo não está definido
     }
 
     $sql = "UPDATE forum SET titre='$titre', texte='$texte', date='$date' WHERE id_forum = '$id_forum'";

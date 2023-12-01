@@ -4,10 +4,6 @@ function forum_controller_forum(){
  
  }
 
-function forum_controller_renderforum() {
-     header("Location: ?controller=forum&function=index");
-}
-
 function forum_controller_login($request){
      render(VIEW_DIR.'/forum/login.php');
 }
@@ -50,9 +46,7 @@ function forum_controller_view($request){
 function forum_controller_edit($request) {
      require_once(MODEL_DIR . '/forum.php');
      
-     // Adicione verificações para garantir que 'id_forum' está presente em $request
      if (!isset($request['id_forum'])) {
-         // Lide com a situação em que 'id_forum' não está presente
      }
  
      $utilisateur = forum_model_view($request);

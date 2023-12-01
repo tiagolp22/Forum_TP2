@@ -18,7 +18,7 @@
                 <td>
                     <form action="?controller=utilisateur&function=delete" method="post">
                         <input type="hidden" name="id_utilisateur" value="<?php echo $row['id_utilisateur'] ?>">
-                        <input type="submit" Value="Effacer">
+                        <input class="danger" type="submit" Value="Effacer">
                     </form>
                 </td>
             </tr>

@@ -1,119 +1,113 @@
 @import url(reset.css);
 
-/* Estilo do corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
-main{
-    background-color: #959595;
-}
+
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-/* Estilo do cabeçalho (header) */
 header {
-    background-color: #000000; /* Cor de fundo do cabeçalho */
-    color: #fff; /* Cor do texto no cabeçalho */
-    padding: 8px; /* 10px convertidos para rem */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
 }
 
-/* Estilo da navegação (nav) */
 nav {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 8px; /* 10px convertidos para rem */
+  margin-top: 10px;
+ 
 }
+
 
 nav a {
-    color: #fff; /* Cor dos links na navegação */
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
 }
 
-/* Estilo da caixa de login */
-.login-page {
-    max-width: 600px;
-    margin: 20px auto; /* Unidade fixa (pixels) */
-    padding: 15px; /* Unidade fixa (pixels) */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h2 {
+  color: #333;
 }
 
-.login-form label {
-    display: block;
-    margin-bottom: 8px; /* 10px convertidos para rem */
+form, .form {
+  margin-top: 20px;
 }
 
-.login-form input {
-    width: 100%;
-    padding: 8px; /* 8px convertidos para rem */
-    margin-bottom: 8px; /* 15px convertidos para rem */
+label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-.login-form .bouton {
-    background-color: #333;
-    color: #fff;
-    padding: 8px; /* 10px convertidos para rem */
-    border: none;
-    cursor: pointer;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
-.login-form .bouton:hover {
-    background-color: #555;
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-/* Espaçamento para os campos do fórum */
-table {
-    width: 100%;
-    margin-top: 8px; /* 20px convertidos para rem */
-    border-collapse: collapse;
+form, .form {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+form:hover, .form:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-th, td {
-    padding: 8px; /* 10px convertidos para rem */
-    text-align: left;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: border-color 0.3s ease;
 }
 
-/* Estilo do formulário do fórum */
-form {
-    max-width: 500px;
-    margin: 8px auto; /* 20px convertidos para rem */
-    padding: 32px; /* 15px convertidos para rem */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+input:focus,
+textarea:focus {
+  border-color: #333;
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px; /* 10px convertidos para rem */
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
-form input,
-form textarea {
-    width: 100%;
-    padding: 8px; /* 8px convertidos para rem */
-    margin-bottom: 8px; /* 15px convertidos para rem */
+button:hover {
+  background-color: #1155b4;
 }
 
-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 8px; /* 10px convertidos para rem */
-    border: none;
-    cursor: pointer;
+.danger {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-form input[type="submit"]:hover {
-    background-color: #555;
+.danger:hover {
+  background-color: rgb(222, 59, 59);
 }

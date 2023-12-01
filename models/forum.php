@@ -1,4 +1,5 @@
 <?php
+
 function forum_model_list(){
     require(CONNEX_DIR);
     $sql = "SELECT *, nom FROM forum INNER JOIN utilisateur ON (id_utilisateur_forum = id_utilisateur) ORDER BY titre";
@@ -31,12 +32,18 @@ function forum_model_view($request){
     return $result;
 }
 
-function forum_model_edit($request){
+function forum_model_edit($request) {
     require(CONNEX_DIR);
     foreach ($request as $key => $value) {
         $$key = mysqli_real_escape_string($con, $value);
     }
-    $sql = "UPDATE forum SET titre='$titre', texte='$texte', date= '$date' WHERE id_forum = '$id_forum'";
+
+    // Adicione verificações para garantir que os campos estejam definidos
+    if (!isset($titre, $texte, $date, $id_forum)) {
+        // Lide com a situação em que algum campo não está definido
+    }
+
+    $sql = "UPDATE forum SET titre='$titre', texte='$texte', date='$date' WHERE id_forum = '$id_forum'";
     $result = mysqli_query($con, $sql);
     mysqli_close($con);
 }

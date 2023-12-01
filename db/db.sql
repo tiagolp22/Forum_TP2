@@ -17,3 +17,6 @@ CREATE TABLE utilisateur (
     mot_de_passe VARCHAR(80) NOT NULL,
     login INT DEFAULT 0
 );
+
+email: marcos@gmail.com
+mot_de_passe: 123456

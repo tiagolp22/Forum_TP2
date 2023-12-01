@@ -1,17 +1,27 @@
-<h3>Mise à jour</h3>
+<div class="data-forum">
+    <h1>Éditer le commentaire</h1>
 
-<form action="index.php?controller=forum&function=edit" method="post">
-    
-        <label>Titre:
-            <input type="text" name="titre" value="<?php echo $data['titre']; ?>">
-        </label>
+    <form action="index.php?controller=forum&function=update" method="post">
+        <div class="forum-field">
+            <label> Titre :
+                <input name="titre" type="text" class="input-area" value="<?= $data['titre']; ?>">
+            </label>
+        </div>
+        <div class="forum-field">
+            <label> Texte :
+                <textarea name="texte" maxlength="1000" class="textarea" rows="5" cols="100"><?= $data['texte']; ?></textarea>
+            </label>
+        </div>
+        <div class="forum-field">
+            <label> Date :
+                <input name="date" type="date" class="area-date" disabled value="<?= $data['date']; ?>">
+            </label>
+        </div>
 
-        <label> Article:
-            <textarea name="texte" maxlength="1000" class="textarea" rows="5" cols="100"><?= $data['texte']; ?></textarea>
-        </label>
+        <input name="id_forum" type="hidden" value="<?= $data['id_forum']; ?>" >
 
-        <label>Date:
-            <input type="date" name="date" value="<?php echo $data['id_forum']; ?>">
-        </label>
-    <input type="submit" value="Soumettre">
-</form>
+        <div class="forum-field">
+            <button type="submit" value="Mettre à jour" class="btn">vai</button>
+        </div>
+    </form>
+</div>

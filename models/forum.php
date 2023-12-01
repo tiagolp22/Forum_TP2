@@ -20,30 +20,39 @@ function forum_model_insert(){
     mysqli_close($con);
 }
 
-function forum_model_view($request){
+
+function forum_model_update() {
     require(CONNEX_DIR);
-    foreach($request as $key=>$value){
-        $$key=mysqli_real_escape_string($con, $value);
+    
+    foreach ($_POST as $key => $value) {
+        $$key = mysqli_real_escape_string($con, $value);
+        error_log("Key : ". $key . " Value : ". $value);
     }
-    $sql = "SELECT * FROM forum WHERE id_forum = '$id_forum'";
+  
+    $sql = "UPDATE forum SET titre='$titre', texte='$texte' WHERE id_forum = '$id_forum'";
     $result = mysqli_query($con, $sql);
-    $result = mysqli_fetch_assoc($result);
-    mysqli_close($con);
-    return $result;
+
+    if (!$result) {
+        die("Erro: " . mysqli_error($con));
+    }
+
 }
 
 function forum_model_edit($request) {
     require(CONNEX_DIR);
-    foreach ($request as $key => $value) {
-        $$key = mysqli_real_escape_string($con, $value);
-    }
 
-    if (!isset($titre, $texte, $date, $id_forum)) {
-    }
-
-    $sql = "UPDATE forum SET titre='$titre', texte='$texte', date='$date' WHERE id_forum = '$id_forum'";
+    $id_forum = mysqli_real_escape_string($con, $request['id_forum']);
+    $sql = "SELECT * FROM forum WHERE id_forum = '$id_forum'";
     $result = mysqli_query($con, $sql);
-    mysqli_close($con);
+    
+    $count = mysqli_num_rows($result);
+
+    if ($count == 1) {
+        $forum_data = mysqli_fetch_assoc($result);
+        return $forum_data;
+    } else {
+      
+    }
 }
 
 

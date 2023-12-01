@@ -1,7 +1,6 @@
 <?php
 function forum_controller_forum(){
      render('/forum/index.php');
- 
  }
 
 function forum_controller_login($request){
@@ -19,7 +18,6 @@ function forum_controller_connect(){
 }
 
 function forum_controller_index(){
-
      require_once(MODEL_DIR.'/forum.php');
      $data = forum_model_list();
      render(VIEW_DIR.'/forum/index.php', $data);
@@ -27,34 +25,22 @@ function forum_controller_index(){
 
 
 function forum_controller_insert(){
-
      require_once(MODEL_DIR.'/forum.php');
      forum_model_insert();
      header("Location: ?controller=forum&function=index");
 }
 
-function forum_controller_view($request){
-
-     require_once(MODEL_DIR.'/forum.php');
-     $utilisateur = forum_model_view($request);
-     
-     $data = array_merge(array('utilisateur' => $utilisateur));
-
-     render(VIEW_DIR.'/forum/view.php', $data);
-}
-
 function forum_controller_edit($request) {
      require_once(MODEL_DIR . '/forum.php');
-     
-     if (!isset($request['id_forum'])) {
-     }
- 
-     $utilisateur = forum_model_view($request);
-     $data = array('utilisateur' => $utilisateur);
- 
-     render(VIEW_DIR . '/forum/view.php', $data);
+     $result = forum_model_edit($request);
+     render(VIEW_DIR . '/forum/view.php', $result);
  }
 
+ function forum_controller_update() {
+     require_once(MODEL_DIR . '/forum.php');
+     forum_model_update();
+     header("Location: ?controller=forum&function=index");
+ }
 
 function forum_controller_delete($request){
     require_once(MODEL_DIR.'/forum.php');

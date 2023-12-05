@@ -21,7 +21,7 @@
         <input name="id_forum" type="hidden" value="<?= $data['id_forum']; ?>">
 
         <div class="forum-field">
-            <button type="submit" value="Mettre à jour" class="btn">vai</button>
+            <button type="submit" value="Mettre à jour" class="btn">Editer</button>
         </div>
     </form>
 </div>

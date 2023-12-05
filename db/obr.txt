@@ -1,0 +1,10 @@
+email: marcos@gmail.com
+mot_de_passe: 123456
+
+https://github.com/tiagolp22/Forum_TP2
+
+https://e2395947.webdev.cmaisonneuve.qc.ca/TP2_DB/TP2-FORUM-TIAGO/index.php?controller=forum&function=index
+
+
+tiago barros cavalcanti r silva
+e2395947
